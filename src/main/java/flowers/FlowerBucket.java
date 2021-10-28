@@ -3,7 +3,7 @@ package flowers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlowerBucket {
+public class FlowerBucket extends Item {
     private List<FlowerPack> flowerPackList = new ArrayList<FlowerPack>();
     public double price() {
         double sum = 0;
@@ -14,5 +14,15 @@ public class FlowerBucket {
     }
     public void addFlowerPack(FlowerPack flowerPack) {
         flowerPackList.add(flowerPack);
+    }
+
+    @Override
+    public double getPrice() {
+        return this.price();
+    }
+
+    @Override
+    public String getDescription() {
+        return flowerPackList.toString();
     }
 }
